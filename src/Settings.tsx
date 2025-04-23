@@ -12,8 +12,22 @@ interface SettingsProps {
 const Settings: React.FC<SettingsProps> = ({ scenario1Settings, setScenario1Settings }) => {
   const [localSettings, setLocalSettings] = useState(scenario1Settings);
 
+  const [showSaved, setShowSaved] = useState(false);
+
+  useEffect(() => {
+    const savedSettings = localStorage.getItem('scenario1Settings');
+    if (savedSettings) {
+      const parsed = JSON.parse(savedSettings);
+      setLocalSettings(parsed);
+      setScenario1Settings(parsed);
+    }
+  }, []);
+
   const handleSave = () => {
     setScenario1Settings(localSettings);
+    localStorage.setItem('scenario1Settings', JSON.stringify(localSettings));
+    setShowSaved(true);
+    setTimeout(() => setShowSaved(false), 2000);
   };
 
   return (
@@ -69,12 +83,15 @@ const Settings: React.FC<SettingsProps> = ({ scenario1Settings, setScenario1Sett
               }
             />
           </div>
-          <button 
-            onClick={handleSave}
-            className="save-button"
-          >
-            Save Changes
-          </button>
+          <div className="save-container">
+            <button 
+              onClick={handleSave}
+              className="save-button"
+            >
+              Save Changes
+            </button>
+            {showSaved && <span className="save-notification">Saved!</span>}
+          </div>
           <div className="video-url-info">
             for videos: use direct MP4 links:{' '}
             <a href="https://example.com/video.mp4">

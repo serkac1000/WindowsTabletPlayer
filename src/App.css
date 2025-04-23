@@ -102,3 +102,27 @@
 .save-button:hover {
   background-color: #45a049;
 }
+
+.save-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.save-notification {
+  color: #4CAF50;
+  font-weight: bold;
+}
+
+.video-player {
+  width: 100%;
+  max-width: 800px;
+  margin: 20px auto;
+  display: block;
+}
+
+.video-title {
+  font-size: 1.2em;
+  margin: 10px 0;
+  font-weight: bold;
+}
