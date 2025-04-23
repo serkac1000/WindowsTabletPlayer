@@ -6,6 +6,11 @@ First, you need to have Node.js and npm installed on your system. You can downlo
 After installing Node and npm, you can install the project dependencies by running the following command in the project directory:
 
 
+First, you need to have Node.js and npm installed on your system. You can download Node.js from the official website: [https://nodejs.org/](https://nodejs.org/).
+
+After installing Node and npm, you can install the project dependencies by running the following command in the project directory:
+
+
 
 
 
