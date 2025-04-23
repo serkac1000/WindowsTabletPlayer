@@ -93,11 +93,11 @@ const Settings: React.FC<SettingsProps> = ({ scenario1Settings, setScenario1Sett
             {showSaved && <span className="save-notification">Saved!</span>}
           </div>
           <div className="video-url-info">
-            for videos: use direct MP4 links:{' '}
-            For testing, you can use: 
-            <a href="https://download.samplelib.com/mp4/sample-5s.mp4">
-              https://download.samplelib.com/mp4/sample-5s.mp4
-            </a>
+            For videos, you can use:
+            <ul>
+              <li>Direct MP4 links (e.g. https://download.samplelib.com/mp4/sample-5s.mp4)</li>
+              <li>Project videos (e.g. /FW1.mp4 for files in the public folder)</li>
+            </ul>
           </div>
         </div>
       </div>
