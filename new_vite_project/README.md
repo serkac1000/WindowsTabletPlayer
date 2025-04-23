@@ -1,7 +1,9 @@
 # Scenario Player
 
 ## Installation
-To install the project dependencies, run: 
+To install the project dependencies, run:
+
+
 
 
 
