@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 interface PlayerProps {
   scenario1Title: string;
+  scenario1VideoUrl: string;
 }
 
 const Player: React.FC<PlayerProps> = ({ scenario1Title }) => {

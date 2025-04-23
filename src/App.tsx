@@ -11,7 +11,7 @@ function App(): JSX.Element {
 
   return (
       <Routes>
-        <Route path="/" element={<Player scenario1Title={scenario1Settings.title} />} />
+        <Route path="/" element={<Player scenario1Title={scenario1Settings.title} scenario1VideoUrl={scenario1Settings.videoUrl} />} />
         <Route path="/settings" element={<Settings 
         scenario1Settings={scenario1Settings} 
         setScenario1Settings={setScenario1Settings}
