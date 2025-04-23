@@ -17,13 +17,13 @@ const Player: React.FC<PlayerProps> = ({ scenario1Title, scenario1VideoUrl }) =>
       </div>
       <div>
         <div className="video-title">{scenario1Title ? scenario1Title : "No video selected"}</div>
-        {scenario1VideoUrl ? (
-          <video 
-            controls 
-            className="video-player"
-            src={scenario1VideoUrl}
-          />
-        ) : (
+        <video 
+          controls 
+          className="video-player"
+          src={scenario1VideoUrl}
+          style={{ display: scenario1VideoUrl ? 'block' : 'none' }}
+        />
+        {!scenario1VideoUrl && (
           <div>
             <p>Please select a scenario with a configured video URL</p>
           </div>
