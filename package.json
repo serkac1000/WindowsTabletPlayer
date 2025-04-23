@@ -7,7 +7,7 @@
     "dev": "vite --host 0.0.0.0",
     "test": "vitest",
     "build": "tsc && vite build",
-    "build:exe": "npm run build && pkg . --targets win-x64 --output dist/scenario-player.exe",
+    "build:exe": "npm run build && pkg . --targets win-x64 --output dist/scenario-player.exe --public ./public",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview"
   },
