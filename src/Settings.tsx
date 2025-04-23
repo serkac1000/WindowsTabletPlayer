@@ -94,8 +94,9 @@ const Settings: React.FC<SettingsProps> = ({ scenario1Settings, setScenario1Sett
           </div>
           <div className="video-url-info">
             for videos: use direct MP4 links:{' '}
-            <a href="https://example.com/video.mp4">
-              https://example.com/video.mp4
+            For testing, you can use: 
+            <a href="https://download.samplelib.com/mp4/sample-5s.mp4">
+              https://download.samplelib.com/mp4/sample-5s.mp4
             </a>
           </div>
         </div>
