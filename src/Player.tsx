@@ -20,9 +20,17 @@ const Player: React.FC<PlayerProps> = ({ scenario1Title, scenario1VideoUrl }) =>
         <video 
           controls 
           className="video-player"
-          src={scenario1VideoUrl}
-          style={{ display: scenario1VideoUrl ? 'block' : 'none' }}
-        />
+          key={scenario1VideoUrl}
+          style={{ 
+            display: scenario1VideoUrl ? 'block' : 'none',
+            maxWidth: '100%',
+            width: '800px',
+            margin: '20px auto'
+          }}
+        >
+          <source src={scenario1VideoUrl} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         {!scenario1VideoUrl && (
           <div>
             <p>Please select a scenario with a configured video URL</p>
