@@ -6,7 +6,7 @@ interface PlayerProps {
   scenario1VideoUrl: string;
 }
 
-const Player: React.FC<PlayerProps> = ({ scenario1Title }) => {
+const Player: React.FC<PlayerProps> = ({ scenario1Title, scenario1VideoUrl }) => {
   return (
     <div>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
