@@ -1,11 +1,20 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 
-const Settings: React.FC = () => {
-  const [scenario1Settings, setScenario1Settings] = useState({
-    title: '',
-    videoUrl: '',
-  });
+interface SettingsProps {
+  scenario1Settings: {
+    title: string;
+    videoUrl: string;
+  };
+  setScenario1Settings: (settings: { title: string; videoUrl: string }) => void;
+}
+
+const Settings: React.FC<SettingsProps> = ({ scenario1Settings, setScenario1Settings }) => {
+  const [localSettings, setLocalSettings] = useState(scenario1Settings);
+
+  const handleSave = () => {
+    setScenario1Settings(localSettings);
+  };
 
   return (
     <div data-testid="settings">
@@ -37,10 +46,10 @@ const Settings: React.FC = () => {
             <input
               type="text"
               id="scenario1-title"
-              value={scenario1Settings.title}
+              value={localSettings.title}
               onChange={(e) =>
-                setScenario1Settings({
-                  ...scenario1Settings,
+                setLocalSettings({
+                  ...localSettings,
                   title: e.target.value,
                 })
               }
@@ -51,15 +60,21 @@ const Settings: React.FC = () => {
             <input
               type="text"
               id="scenario1-videoUrl"
-              value={scenario1Settings.videoUrl}
+              value={localSettings.videoUrl}
               onChange={(e) =>
-                setScenario1Settings({
-                  ...scenario1Settings,
+                setLocalSettings({
+                  ...localSettings,
                   videoUrl: e.target.value,
                 })
               }
             />
           </div>
+          <button 
+            onClick={handleSave}
+            className="save-button"
+          >
+            Save Changes
+          </button>
           <div className="video-url-info">
             for videos: use direct MP4 links:{' '}
             <a href="https://example.com/video.mp4">
